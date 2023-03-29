@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Menu, Container, Header, Divider, Grid, Button, Image } from "semantic-ui-react";
 
 
 const Progress = ({user}) => {
@@ -39,21 +40,27 @@ const Progress = ({user}) => {
   }
 
   return (
-    <div>
-      <h2>Progress: {progress}%</h2>
-      <ul>
-        {verses ? verses.map((book) => (
-          <li key={book.id}>
-            <div className="book-title">{book.verse}</div>
-            <p>{book.details}</p>
-            <button onClick={()=>deleteVerse(book.id)}>Delete</button>
-            {/* <div className="chapters">{displayChapters(book.chapters)}</div> */}
-          </li>
-        )):
-        <>Login To View Progress</>
-      }
-      </ul>
-    </div>
+  <div className="ui container center aligned">
+
+    
+    <h2>Progress: {progress}%</h2>
+    <ul>
+      {verses ? verses.map((book) => (
+        <li key={book.id}>
+          <div className="book-title">{book.verse}</div>
+          <p>{book.details}</p>
+          <button className="ui red button" onClick={()=>deleteVerse(book.id)}>Delete</button>
+          {/* <div className="chapters">{displayChapters(book.chapters)}</div> */}
+        </li>
+      )):
+      <div className="ui message">
+        <div className="header">
+          Login To View Progress
+        </div>
+      </div>
+    }
+    </ul>
+  </div>
   );
 };
 
