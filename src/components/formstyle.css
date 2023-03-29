@@ -1,0 +1,22 @@
+.new-form{
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-form input{
+    padding: 12px;
+    outline: none;
+    border-radius: 7px;
+    margin: 1.4rem;
+}
+
+.new-form button{
+    padding: 1rem;
+    color: white;
+    background-color: rgb(43, 43, 161);
+    margin-bottom: 1rem;
+
+}
